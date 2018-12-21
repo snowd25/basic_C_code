@@ -64,7 +64,7 @@ int main()
     int i; 
     int end = sizeof(ar)/sizeof(int);
     printf("%d ",end);
-    merge_sort(ar, 0, end);
+    merge_sort(ar, 0, end-1);
     
     printf("\nSorted array is :");
 
