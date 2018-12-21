@@ -50,7 +50,7 @@ int main()
     //int ar[] = { 3, 1, 4};
     int end = sizeof(ar)/sizeof(int);
 
-    quick_sort(ar, 0, end);
+    quick_sort(ar, 0, end-1);
 
     printf("\n\nSorted array:-");
     for(index = 0; index < end; index++)
