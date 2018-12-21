@@ -12,12 +12,10 @@ int binary_search(int arr[], int start, int end, int s_key)
 		if(s_key < arr[mid] )
 		{
 			 end = mid - 1 ;
-			continue;
 		}
-		if(s_key > arr[mid] )
+		else
 		{
 			start = mid + 1;
-			continue;
 		}
 	}
 
@@ -31,7 +29,7 @@ int main()
 
     //int ar[] = { 3, 1, 4}; 
     int end = sizeof(ar)/sizeof(int);
-    index = binary_search(ar, 0, end, 19);
+    index = binary_search(ar, 0, end-1, 19);
      printf("\n%d",index);
     printf("\n\n");
     return 0;
