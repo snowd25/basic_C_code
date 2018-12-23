@@ -1,3 +1,4 @@
+
 #include<stdio.h>
   
 int first_o_rotated(int arr[], int start, int end, int s_key)
@@ -23,11 +24,11 @@ int main()
 
 
 
-        int arr[]= {10,20,30,40,40,1,2,3,4,5};
+        int arr[]= {10,20,30,40,40,40,50,1,1,2,5,5};
 
         int end = (sizeof(arr)/sizeof(arr[0]));
 
-        int search_key = 1;
+        int search_key = 60;
 
         int index = first_o_rotated(arr, 0, end-1, search_key);
 
