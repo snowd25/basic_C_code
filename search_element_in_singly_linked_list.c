@@ -1,65 +1,47 @@
  #include<stdio.h>
 #include<stdlib.h>
-struct node
-{
+typedef struct node {
 	int data;
 	struct node* next;
-};
+} Node;
 
-
-struct node* create_node()
-{
-	struct node* temp;
-	temp = malloc(sizeof(struct node *));
+Node* create_node(int data){
+	
+	Node * temp = (Node *) malloc(sizeof(struct node *));
+	temp->data = data;
 	temp->next = NULL;
 
 	return temp;
 }
 
-struct node* insert_node_to_list(struct node **head, int position, int data)
-{
-	struct node *temp, *p;
+struct void insert_node_to_list(struct node **head, int position, int data){
+	struct node *newNode;
 
-	temp = create_node();
-	temp->data = data;
+	newNode = create_node(data);
 
 	//printf("\t %p -->", &temp->data);
-	if(*head == NULL)
-	{
-		temp->data = data;
-		*head = temp;
+	if(*head == NULL){
+	    *head = temp;
 	}
-	else 
-	{
-		p = *head;
-		while(p->next != NULL)
-		{
-			p = p->next;
-		}
+	else {
+	    Node *current = *head;
+	    while(current->next != NULL){
+                current = current->next;
+	    }
 		
-	p->next = temp;
+	    current->next = newNode;
 	}
-	 //printf("\t %p -->", &(*head)->data);
-
-	return NULL;
 }
- int find_element_in_linked_list(struct node *head, int search_key)
-{
-        struct node *temp_ptr = head;
 
-	int count = 0;
-        //printf("hello:%d", head->data);
-
-        while(NULL != temp_ptr)
-        {
-		if(temp_ptr->data == search_key)
-		{
-			return count;
+Node * find_element_in_linked_list(struct node *head, int search_key){
+        struct node *current = head;
+        while(NULL != current){
+		if(current->data == search_key){
+			return current;
 		}
-		count += 1;
-		temp_ptr = temp_ptr->next;
+		currrent = currrent->next;
         }
-        return -1;
+        return NULL;
 }
 
 int main()
