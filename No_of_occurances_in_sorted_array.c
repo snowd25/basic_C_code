@@ -1,3 +1,4 @@
+//No of occurances
 #include <stdio.h>
 
 int last_occur(int arr[], int start, int end, int s_key)
